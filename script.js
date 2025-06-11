@@ -11,6 +11,13 @@ scene.add(sunLight);
 const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xFDB813 });
 const sun = new THREE.Mesh(new THREE.SphereGeometry(3, 32, 32), sunMaterial);
 scene.add(sun);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+scene.add(ambientLight);
+const testCube = new THREE.Mesh(
+  new THREE.BoxGeometry(2, 2, 2),
+  new THREE.MeshStandardMaterial({ color: 0xff00ff }) // bright pink!
+);
+scene.add(testCube);
 
 const planetsConfig = [
   { name: "Mercury", radius: 5, size: 0.25, color: 0xb0b0b0 },
@@ -48,7 +55,8 @@ planetsConfig.forEach((planet, i) => {
   planets.push({ mesh: sphere, angle: 0, radius: planet.radius, speedControl: slider });
 });
 
-camera.position.z = 50;
+camera.position.z = 100;
+camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 function updateScene() {
   requestAnimationFrame(updateScene);
