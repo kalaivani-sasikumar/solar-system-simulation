@@ -1,4 +1,4 @@
-* {
+ {
   box-sizing: border-box;
 }
 body {
@@ -8,7 +8,7 @@ body {
   font-family: Arial, sans-serif;
   overflow: hidden;
 }
-#control-panel {
+control-panel {
   position: fixed;
   top: 15px;
   left: 15px;
@@ -19,11 +19,11 @@ body {
   max-height: 90vh;
   overflow-y: auto;
 }
-#control-panel label {
+control-panel label {
   margin-top: 8px;
   font-size: 14px;
   display: block;
 }
-#control-panel input[type=range] {
+control-panel input[type=range] {
   width: 150px;
 }
